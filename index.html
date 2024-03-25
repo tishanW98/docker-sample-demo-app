@@ -1,0 +1,62 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+  <style>
+    .profile-picture {
+      width: 200px; /* Set your desired width */
+      height: auto; /* Maintain aspect ratio */
+    }
+  </style>
+  <script>
+    function editProfile() {
+      document.querySelector(".container").style.display = "none";
+      document.querySelector(".container-edit").style.display = "block";
+      const name = document.querySelector("#name").textContent;
+      document.querySelector("#input-name").value = name;
+      const email = document.querySelector("#email").textContent;
+      document.querySelector("#input-email").value = email;
+      const interests = document.querySelector("#interests").textContent;
+      document.querySelector("#input-interests").value = interests;
+    }
+    function saveProfile() {
+      document.querySelector("#name").textContent =
+        document.querySelector("#input-name").value;
+      document.querySelector("#email").textContent =
+        document.querySelector("#input-email").value;
+      document.querySelector("#interests").textContent =
+        document.querySelector("#input-interests").value;
+
+      document.querySelector(".container").style.display = "block";
+      document.querySelector(".container-edit").style.display = "none";
+    }
+  </script>
+  <body>
+    <div class="container">
+      <h1 id="header1">User Profile</h1>
+      <img class="profile-picture" src="/profile-picture" />
+      <hr />
+      Name :
+      <h3 id="name">John Doe</h3>
+      <hr />
+      Email :
+      <h3 id="email">johndoe@gmail.com</h3>
+      <hr />
+      Interests :
+      <h3 id="interests">Coding, Reading, Writing</h3>
+      <hr />
+      <button id="button1" onClick="editProfile()">Edit</button>
+    </div>
+    <div class="container-edit" style="display: none">
+      <h1 id="header2">User Profile</h1>
+      <img class="profile-picture" src="/profile-picture" />
+      <hr/>
+      Name :<input id="input-name" type="text" />
+      <hr />
+      Email :<input id="input-email" type="email" />
+      <hr />
+      Interests :<input id="input-interests" type="text" />
+      <hr />
+      <button id="button2" onClick="saveProfile()">Save</button>
+    </div>
+  </body>
+</html>
